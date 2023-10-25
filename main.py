@@ -20,7 +20,7 @@ def denirostats(file):
 if __name__ == "__main__":
     start_time = time.time()
 
-    denirostats("deniro.csv")
+    print(denirostats("deniro.csv"))
 
     end_time = time.time()
     print(f"\nRuntime: {end_time - start_time:.6f} seconds")

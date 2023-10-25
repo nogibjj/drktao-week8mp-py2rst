@@ -18,7 +18,6 @@ def denirostats(file):
 
 
 if __name__ == "__main__":
-    df2 = pd.read_csv("deniro.csv")
     start_time = time.time()
 
     denirostats("deniro.csv")
@@ -26,5 +25,5 @@ if __name__ == "__main__":
     end_time = time.time()
     print(f"\nRuntime: {end_time - start_time:.6f} seconds")
 
-    mem_usage = memory_usage((denirostats, (df2,)))
+    mem_usage = memory_usage((denirostats, ('deniro.csv',)))
     print(f"Memory Usage: {max(mem_usage):.6f} MiB")

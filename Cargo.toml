@@ -1,0 +1,8 @@
+[package]
+name = "pandas_da"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+statistics
+sys-info = "0.7"

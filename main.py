@@ -1,6 +1,7 @@
 import pandas as pd
-import matplotlib.pyplot as plt
 import statistics
+import time
+from memory_profiler import memory_usage
 
 
 def denirostats(file):
@@ -16,36 +17,14 @@ def denirostats(file):
     return sumstats
 
 
-def denirohist(file):
-    df = pd.read_csv(file)
-    plt.hist(
-        df.iloc[:, 1],
-        bins=[0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100],
-        edgecolor="black",
-    )
-    plt.title("Rotten Tomatoes Score Distribution of Robert De Niro Movies")
-    plt.xlabel("Score")
-    plt.ylabel("Frequency")
-    plt.show()
-    plt.savefig("hist_viz.png")
-    return
-
-
 if __name__ == "__main__":
-    summary = denirostats("deniro.csv")
-    denirohist("deniro.csv")
-    str1 = f"{summary.to_markdown()}"
-    str2 = "![Alt text](hist_viz.png)"
+    df = pd.read_csv('deniro.csv')
+    start_time = time.time()
+    
+    denirostats("deniro.csv")
 
-    file_path = "./report.md"
-
-    with open(file_path, "w", encoding="utf-8") as f:
-        f.write(
-            "Summary Statistics"
-            + "\n" * 3
-            + str1
-            + "\n" * 3
-            + "Histogram"
-            + "\n" * 3
-            + str2
-        )
+    end_time = time.time()
+    print(f"\nRuntime: {end_time - start_time:.6f} seconds")
+    
+    mem_usage = memory_usage((denirostats, (df,)))
+    print(f"Memory Usage: {max(mem_usage):.6f} MiB")

@@ -1,11 +1,14 @@
-[![Python template with Github Actions](https://github.com/drktao/python-template/actions/workflows/main.yml/badge.svg)](https://github.com/drktao/python-template/actions/workflows/main.yml)
+[![Python template with Github Actions](https://github.com/nogibjj/drktao-week8mp-py2rst/actions/workflows/main.yml/badge.svg)](https://github.com/nogibjj/drktao-week8mp-py2rst/actions/workflows/main.yml)
 
-# IDS 706 Week 2 Mini-Project
-This repo uses the python template generated in Week 1 to employ a pandas script that provides descriptive statistics and data visualization. The script main.py contains two functions, one of which computes and displays descriptive statistics (mean, median, standard deviation) of a data column of interest, and the other of which generates a histogram of the data. The script test_main.py tests to ensure that the descriptive statistics are computed as expected.
-
-The specific data set used in this project is a simple one; it contains all Robert De Niro movies and their corresponding Rotten Tomatoes scores. The data of interest are the scores themselves. 
+# IDS 706 Week 8 Mini-Project
+The purpose of this project is to compare the performance of some simple data processing operations in Python and Rust. The data set used contains all Robert De Niro movies and their corresponding Rotten Tomatoes scores. I calculated and displayed the mean and median of these scores and examined the speed and memory usage in Python and Rust. 
 
 ## Instructions
-Use Github codespaces, which will allow for a container to be built with the required packages, as detailed in requirements.txt. In the terminal, one can use `make lint` to lint the code and `make test` to run the provided tests on the code. One can also directly run the scripts using `python main.py` and `python test_main.py`.
+Use Github codespaces, which will allow for a container to be built with the required packages, as detailed in requirements.txt. One can run the data processing steps in Python using `python main.py` in the terminal, and one can run the steps in Rust using `cargo run`. In both cases, the mean and median scores will be displayed, as well as runtime and memory usage.
 
-Running `python main.py` will also generate a summary report to the repo containing the summary statistics of the movie scores and the histogram visualization.
+## Performance Comparison Report
+Below, I have displayed the performance metrics from Python and Rust.
+![Alt text](python_performance.png)
+![Alt text](rust_performance.png)
+
+We can observe that Rust performs the data processing operations much faster than Python, while also using less memory.

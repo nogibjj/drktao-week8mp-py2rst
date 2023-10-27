@@ -1,5 +1,4 @@
 import pandas as pd
-import statistics
 import time
 from memory_profiler import memory_usage
 
@@ -10,7 +9,6 @@ def denirostats(file):
         {
             "Mean Score": round(df.iloc[:, 1].mean(), 2),
             "Median Score": round(df.iloc[:, 1].median(), 2),
-            "Standard Deviation of Scores": round(statistics.stdev(df.iloc[:, 1]), 2),
         },
         index=[0],
     )

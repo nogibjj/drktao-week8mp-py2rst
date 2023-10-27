@@ -3,6 +3,9 @@ name = "pandas_da"
 version = "0.1.0"
 edition = "2021"
 
+[[bin]]
+name = "main"
+path = "lib/main.rs"
+
 [dependencies]
-statistics
 sys-info = "0.7"
